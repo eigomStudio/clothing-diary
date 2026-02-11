@@ -1,30 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clothing Diary</title>
+
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; padding: 64px 20px; background: #fafafa; color: #111; }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    h1 { font-size: 34px; margin: 0 0 12px; }
-    p { line-height: 1.6; color: #444; }
-    .card { margin-top: 28px; padding: 18px 18px; background: white; border: 1px solid #eaeaea; border-radius: 16px; }
-    a { color: #0a84ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; }
+    :root{
+      --text:#222;
+      --muted:#666;
+      --border:#e5e5e5;
+      --bg:#fff;
+      --card:#fafafa;
+      --radius:16px;
+    }
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    .wrap{
+      max-width:980px;
+      margin:56px auto;
+      padding:0 18px;
+    }
+    header h1{
+      margin:0 0 6px 0;
+      font-size:34px;
+      letter-spacing:-0.02em;
+    }
+    header p{
+      margin:0 0 26px 0;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .section{
+      margin:34px 0;
+      padding:18px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--card);
+    }
+
+    /*  2カラムの基本 */
+    .shot{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+    }
+    .shot .img{
+      flex:0 0 320px; /* 画像の“列”幅 */
+      text-align:center;
+    }
+    .shot img{
+      width:300px;
+      height:auto;
+      border:1px solid #ddd;
+      border-radius:14px;
+      background:#fff;
+      display:block;
+      margin:0 auto;
+    }
+    .shot .desc{
+      flex:1;
+      min-width:220px;
+    }
+    .shot h2{
+      margin:2px 0 8px 0;
+      font-size:20px;
+      letter-spacing:-0.01em;
+    }
+    .shot p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px 14px;
+      margin-top:8px;
+    }
+    .feature{
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:#fff;
+      color:var(--text);
+      font-size:14px;
+    }
+
+    .howto ol{
+      margin:10px 0 0 18px;
+      padding:0;
+      color:var(--muted);
+    }
+
+    footer{
+      margin:42px 0 18px 0;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    /*  スマホでは縦並びにする */
+    @media (max-width: 720px){
+      .wrap{ margin:34px auto; }
+      header h1{ font-size:30px; }
+      .section{ padding:14px; }
+
+      .shot{
+        flex-direction:column;
+      }
+      .shot .img{
+        flex:initial;
+        width:100%;
+      }
+      .shot img{
+        width:min(320px, 100%);
+      }
+
+      .features{
+        grid-template-columns:1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <h1>Clothing Diary</h1>
-    <p>A simple iOS app to record and organize your daily outfits.</p>
+    <header>
+      <h1>Clothing Diary</h1>
+      <p>A clean and intuitive outfit tracking app for iPhone and iPad.</p>
+    </header>
 
-    <div class="card">
-      <div class="links">
-        <a href="privacy.html">Privacy Policy</a>
+    <!-- 1: Calendar -->
+    <section class="section">
+      <div class="shot">
+        <div class="img">
+          <img src="images/calendar-view.png" alt="Calendar View screenshot">
+        </div>
+        <div class="desc">
+          <h2>Calendar View</h2>
+          <p>
+            Your home screen. Track outfits at a glance, see daily markers, and jump to weekly summaries or editing tools.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- 2: Add Clothes -->
+    <section class="section">
+      <div class="shot">
+        <div class="img">
+          <img src="images/add-clothes.png" alt="Add Clothes screenshot">
+        </div>
+        <div class="desc">
+          <h2>Add Clothes</h2>
+          <p>
+            Register clothes with a photo, category, purchase date, and a quick note.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: Edit Clothes -->
+    <section class="section">
+      <div class="shot">
+        <div class="img">
+          <img src="images/edit-clothes.png" alt="Edit Clothes screenshot">
+        </div>
+        <div class="desc">
+          <h2>Edit Clothes</h2>
+          <p>
+            Update item details anytime. Keep your wardrobe clean and organized.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4: Select Outfit -->
+    <section class="section">
+      <div class="shot">
+        <div class="img">
+          <img src="images/select-outfit.png" alt="Select Outfit screenshot">
+        </div>
+        <div class="desc">
+          <h2>Select Outfit</h2>
+          <p>
+            Choose clothes for the selected date from your wardrobe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: Weekly -->
+    <section class="section">
+      <div class="shot">
+        <div class="img">
+          <img src="images/weekly-view.png" alt="Weekly View screenshot">
+        </div>
+        <div class="desc">
+          <h2>Weekly View</h2>
+          <p>
+            Review outfits for the week in a simple list format.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="shot" style="align-items:center;">
+        <div class="desc" style="width:100%;">
+          <h2>Features</h2>
+          <div class="features">
+            <div class="feature"> Calendar integration (EventKit)</div>
+            <div class="feature"> Camera capture & quick photo edit</div>
+            <div class="feature"> Custom categories</div>
+            <div class="feature"> Notes & purchase date tracking</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section howto">
+      <h2 style="margin:2px 0 6px 0;">How to Use</h2>
+      <ol>
+        <li>Add your clothes with photos and categories.</li>
+        <li>Select a date on the calendar.</li>
+        <li>Pick clothes for that day.</li>
+        <li>Open Weekly View to review your outfits.</li>
+      </ol>
+    </section>
+
+    <footer>© 2026 eigomStudio</footer>
   </div>
 </body>
 </html>
