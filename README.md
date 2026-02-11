@@ -4,6 +4,6 @@ A simple outfit tracking app for iPhone and iPad.
 ## Screenshot
 
 <p align="center">
-  <img src="screenshot-1.png" width="100">
+  <img src="screenshot-1.png" width="300">
 </p>
 
