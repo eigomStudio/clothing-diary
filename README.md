@@ -19,21 +19,21 @@ You can see your outfit history at a glance and quickly access weekly summaries 
 Register new clothes with photo, category, purchase date, and notes.
 
 ### Edit Clothes
-<p align="center">
+<p align="left">
   <img src="screenshot-3.png" width="300" 
        style="border:1px solid #ddd; border-radius:12px;">
 </p>
 Update existing items and manage your wardrobe easily.
 
 ### Select Outfit
-<p align="center">
+<p align="left">
   <img src="screenshot-4.png" width="300" 
        style="border:1px solid #ddd; border-radius:12px;">
 </p>
 Choose clothes for the selected date directly from your wardrobe.
 
 ### Weekly View
-<p align="center">
+<p align="left">
   <img src="screenshot-5.png" width="300" 
        style="border:1px solid #ddd; border-radius:12px;">
 </p>
