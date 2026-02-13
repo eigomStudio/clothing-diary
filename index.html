@@ -30,7 +30,19 @@
     margin: 56px auto;
     padding: 0 18px;
   }
+.title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
 
+.app-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
   header {
     text-align: center;
     ping: 28px 0 10px;
@@ -112,7 +124,10 @@
 <body>
   <div class="wrap">
     <header>
+      <div class="title-wrap">
       <h1>Clothing Diary</h1>
+        <img src="images/app-icon.png" alt="App Icon" class="app-icon">
+      </div>
       <p>Track your outfits. Organize your wardrobe.</p>
     </header>
 
