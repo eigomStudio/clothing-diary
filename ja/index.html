@@ -31,6 +31,20 @@
     padding: 0 18px;
   }
 
+  .title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.app-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+  
   header {
     text-align: center;
     ping: 28px 0 10px;
@@ -112,9 +126,10 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>Clothing Diary</h1>
-      <p>Track your outfits. Organize your wardrobe.</p>
-    </header>
+      <div class="title-wrap">
+        <img src="../images/AppIcon.png" alt="App Icon" class="app-icon">
+        <h1>Clothing Diary</h1>
+      </div>
 
     <!-- 1: Calendar -->
     <section class="section">
