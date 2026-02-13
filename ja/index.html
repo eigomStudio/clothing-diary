@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Diary</title>
+
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --border: #e6e6ea;
+    --radius: 18px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 56px auto;
+    padding: 0 18px;
+  }
+
+  header {
+    text-align: center;
+    ping: 28px 0 10px;
+  }
+
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+  }
+
+  .section {
+    margin: 26px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+
+  /* 🔹 画像の基本設定（常に必要） */
+  .feature img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    display: block;
+  }
+
+  .feature h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* 🔹 PCだけ横並び */
+  @media (min-width: 900px) {
+    .feature {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 見出しは上に横いっぱい */
+    .feature h2 {
+      grid-column: 1 / -1;
+    }
+
+    /* 画像は左 */
+    .feature img {
+      grid-column: 1;
+    }
+
+    /* 説明は右 */
+    .feature p {
+      grid-column: 2;
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin: 42px 0 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Clothing Diary</h1>
+      <p>Track your outfits. Organize your wardrobe.</p>
+    </header>
+
+    <!-- 1: Calendar -->
+    <section class="section">
+        <div class="feature">
+          <h2>Calendar View</h2>
+          <img src="images/calendar.png" alt="Calendar View screenshot">
+          <p>
+            Your outfit history is shown on a monthly calendar. On days where you have outfit records, the calendar displays outfit markers, and it can also show events synced from your connected calendar.
+Tap a date to see the outfit details for that day at the bottom of the screen, including clothing photos and any notes you saved.
+            
+          At the bottom, you’ll find three quick actions: <b>Week</b> (left), <b>Edit Outfit</b> (center), and and<b>Add Clothes</b> (right).
+            
+          Tap the calendar icon to view your Apple Calendar lists and select one calendar to sync.
+          Events from the selected calendar will be displayed alongside your outfit records.
+</p>
+      </div>
+    </section>
+
+    <!-- 2: Entry Clothes Data -->
+    <section class="section">
+        <div class="feature">
+          <h2>Entry Clothes Data</h2>
+          <img src="images/add.png" alt="Entry Clothes Data screenshot">
+          <p>
+            Add a clothing photo by taking a picture with the camera or selecting one from your photo library, or pasting an image from the clipboard. 
+            You can also use a simple editing tool to cut out the background for a cleaner look.
+Clothes are managed by category (e.g., <b>Outerwear</b>, <b>Suit</b>, <b>Jacket</b>, <b>Shirts</b>), and you can create your own custom categories.
+          You can also enter the purchase date. In <b>Note</b>, you can store anything you want to remember—brand, color, size, and more.
+          </p>
+      </div>
+    </section>
+
+    <!-- 3: Edit Clothes -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Edit Clothes</h2>
+          <img src="images/edit.png" alt="Edit Clothes screenshot">
+          <p>
+            Update or add details to your saved clothing items. Items are organized by category, and you can reorder them within each category to match your preferences.
+          </p>
+      </div>
+    </section>
+
+    <!-- 4: Select Outfit -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Select Outfit</h2>
+          <img src="images/select.png" alt="Select Outfit screenshot">
+          <p>
+            Record your daily outfit by checking items from your saved clothing list.
+If a pattern or detail is hard to see, tap the photo to open a larger preview and use pinch-to-zoom.
+          </p>
+      </div>
+    </section>
+
+    <!-- 5: Weekly -->
+    <section class="section">
+      <div class="shot">
+        <div class="feature">
+          <h2>Weekly View</h2>
+          <img src="images/weekly.png" alt="Weekly View screenshot">
+          <p>
+            Review your outfit history for the past 7 days from the selected date. You can tap any photo to open a larger preview.
+          </p>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section howto">
+      <h2 style="margin:2px 0 6px 0;">How to Use</h2>
+      <ol>
+        <li>Add your clothes with photos and categories.</li>
+        <li>Select a date on the calendar.</li>
+        <li>Pick clothes for that day.</li>
+        <li>Open Weekly View to review your outfits.</li>
+      </ol>
+    </section>
+
+    <footer>© 2026 eigomStudio</footer>
+  </div>
+</body>
+</html>
 
